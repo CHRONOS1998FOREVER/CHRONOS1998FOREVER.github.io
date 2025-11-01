@@ -551,3 +551,124 @@ a:hover {
         margin: 20px 0;
     }
 }
+/* ------------------------------------- */
+/* ESTILOS PARA PÁGINAS DE PLANES DETALLADOS */
+/* ------------------------------------- */
+
+.plan-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.plan-detalle {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.plan-imagen-grande {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-caracteristicas {
+    background-color: var(--color-fondo);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.plan-caracteristicas h3 {
+    color: var(--color-principal);
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.plan-caracteristicas p {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+.precio-grande {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--color-acento);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.plan-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.boton-contratar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.boton-contratar:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(45, 122, 62, 0.3);
+}
+
+.boton-volver {
+    background-color: #6c757d;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.boton-volver:hover {
+    background-color: #5a6268;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Responsive para páginas de planes */
+@media (max-width: 768px) {
+    .plan-caracteristicas {
+        padding: 20px;
+    }
+    
+    .precio-grande {
+        font-size: 2em;
+    }
+    
+    .plan-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .boton-contratar,
+    .boton-volver {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
