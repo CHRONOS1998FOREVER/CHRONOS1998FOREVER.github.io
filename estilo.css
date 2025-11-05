@@ -44,17 +44,43 @@ body {
 }
 .menu li a {
     display: block;
-    padding: 15px 20px;
+    padding: 10px 20px;
     text-decoration: none;
     color: white;
     font-weight: bold;
     border-left: 5px solid transparent; 
     transition: background-color 0.3s, border-left-color 0.3s;
 }
+.menu li {
+    /* Quitamos el borde de aquí para que no sea más ancho que el enlace */
+    list-style: none; /* Asegura que no haya viñetas */
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid transparent; 
+    
+    /* AÑADIMOS EL BORDE INFERIOR AQUÍ para que tenga el mismo ancho que el fondo del hover */
+    border-bottom: 1px solid var(--color-acento); /* Aplicamos la línea divisoria */
+    
+    transition: background-color 0.3s, border-left-color 0.3s, border-bottom-color 0.3s;
+}
+
 .menu li a:hover,
 .menu li a.active {
     background-color: var(--color-principal); 
     border-left-color: var(--color-acento);
+    /* OPCIONAL: Puedes cambiar el color del borde inferior al hacer hover para un efecto visual */
+    /* border-bottom-color: var(--color-principal); */
+}
+
+/* 3. AÑADIMOS una regla para eliminar el borde del ÚLTIMO enlace */
+.menu li:last-child a {
+    border-bottom: none;
 }
 /* -------------------- */
 /* ESTILOS DEL CONTENIDO (main) */
@@ -151,106 +177,53 @@ a:hover {
     border-radius: 10px;
 }
 
-/* Contenedor de imagen y texto (para historia.html) */
+/* Contenedor de imagen y texto - Grid 50/50 */
 .contenedor-imagen-texto {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% y 50% */
+    gap: 40px;
+    align-items: center;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: var(--color-fondo);
+    border-radius: 12px;
 }
 
-.texto-niño p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-    font-weight: 700; /* Más negrita */
-}
-
-.contenedor-imagen-texto {
-    display: flex;
-    align-items: center; /* Centra verticalmente con la foto */
-    gap: 30px;
-    margin: 30px 0;
-}
-/* Imagen de la mujer estudiante */
-.mujer {
-    width: 350px; /* Ajusta el tamaño que quieras */
+.niño, .mujer, .mapa-cobertura, .instalacion-tecnico {
+    width: 100%;
     height: auto;
-    flex-shrink: 0;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.texto-mujer p {
-    font-size: 20px;
-    line-height: 1.6;
+.texto-niño p, .texto-mujer p, .texto-mapa p, .texto-instalacion p {
+    font-size: 26px; /* Más grande, antes era 22px */
+    line-height: 1.9;
     margin: 0;
     text-align: left;
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--color-secundario);
+    padding: 10px;
 }
 
-/* Responsive para la imagen de la mujer */
+/* Responsive */
 @media (max-width: 768px) {
-    .mujer {
-        width: 100%;
-        max-width: 280px;
+    .contenedor-imagen-texto {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
     }
     
-    .texto-mujer p {
+    .texto-niño p, .texto-mujer p, .texto-mapa p, .texto-instalacion p {
         text-align: center;
     }
 }
-/* Imagen de la clase/escuela */
-.clase {
-    width: 380px;
-    height: auto;
-    flex-shrink: 0;
-    border-radius: 10px;
-}
-
-.texto-clase p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-    font-weight: 700;
-}
-
-/* Responsive para la imagen de la clase */
-@media (max-width: 768px) {
-    .clase {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .texto-clase p {
-        text-align: center;
-    }
-}
-/* Nuevo estilo para la imagen del técnico (Añadir a tu CSS) */
-.instalacion-tecnico {
-    width: 420px; /* Mismo ancho que las otras imágenes */
-    height: auto;
-    flex-shrink: 0;
-    border-radius: 10px;
-}
-
-/* Nuevo estilo para el texto del técnico (Añadir a tu CSS) */
-.texto-instalacion p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-    font-weight: 700;
-}
-
 /* ------------------------------------- */
 /* ESTILOS AÑADIDOS: MAPA DE COBERTURA */
 /* ------------------------------------- */
 
 /* Nuevo estilo para la imagen del Mapa (Añadir a tu CSS) */
 .mapa-cobertura {
-    width: 420px; /* Se usa el mismo ancho que el técnico para mantener consistencia */
+    width: 620px; /* Se usa el mismo ancho que el técnico para mantener consistencia */
     height: auto;
     flex-shrink: 0;
     border-radius: 10px;
